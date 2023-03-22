@@ -1,9 +1,0 @@
-name: Django website
-
-on:
-    workflow_call:
-    workflow_dispatch:
-    push:
-       branches: [master]
-    pull_request:
-        branches: [masterc]
