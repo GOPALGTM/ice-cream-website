@@ -1,0 +1,40 @@
+{% include 'header.html' %}  {% block content %}
+
+{% if messages %} {% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+    <strong> {{ message }} </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %} {% endif %} 
+
+<div class="container-fluid px-0 my-0">
+    <img src="https://source.unsplash.com/1200x400/?contact-us " style=height:350px; class="d-block w-100 " alt="...">
+    <h1 class="text-center">Contact Us </h1>
+
+</div>
+<div class="container">
+    <form method="POST" action="/contact/">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="enter your email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">phone no</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="enter your phone no">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1">tell me what you want to tell me for...</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+{% endblock %}
