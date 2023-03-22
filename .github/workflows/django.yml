@@ -18,9 +18,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          script: " cd /home/ubuntu/ && ./.scripts/deploy.sh"
+          script: " cd /home/ubuntu/ice-cream-website && ./scripts/deploy.sh"
           
-    #   - name: Connect to EC2 instance and start Docker Compose
-    #     uses: appleboy/ssh-action@master
-    #     with:
-    #       host: <YOUR_EC2_IP_ADDRESS>
