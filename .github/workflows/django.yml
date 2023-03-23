@@ -21,6 +21,5 @@ jobs:
           port: ${{ secrets.PORT }}
           script: | 
             cd /home/ubuntu/ice-cream-website  
-            git pull origin master
-            echo "hello"
+            ./.scripts/deploy.sh
           
