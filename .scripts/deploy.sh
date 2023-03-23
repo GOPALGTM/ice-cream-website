@@ -7,7 +7,7 @@ git pull origin master
 echo "new changes copied to server!"
 
 #run and build app using docker-compose
-docker-compose build
+docker build . -t myapp:latest
 
 #deploy updated image.
 docker service update --force --image myapp:latest stackdemo_web
