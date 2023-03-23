@@ -13,13 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Copy Docker Compose files to EC2 instance
-        uses: appleboy/scp-action@master
-        with:
+        uses: appleboy/ssh-action@master
+        with: 
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           port: ${{ secrets.PORT }}
           script: | 
             cd /home/ubuntu/ice-cream-website  
-            ./.scripts/deploy.sh
+            git pull origin master
+            echo "hello"
           
