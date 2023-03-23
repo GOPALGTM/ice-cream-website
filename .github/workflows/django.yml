@@ -18,5 +18,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /home/ubuntu/ice-cream-website && ./.scripts/deploy.sh"
+          port: ${{ secrets.PORT }}
+          script: | 
+            cd /home/ubuntu/ice-cream-website  
+            ./.scripts/deploy.sh
           
