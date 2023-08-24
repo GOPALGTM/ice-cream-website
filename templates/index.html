@@ -30,100 +30,136 @@
 </div>
 
 
-<div class="container my-4">\
-    <h1 class="my-2 text-center">this is our range of ice cream</h1>
+<div class="container my-4">
+    <h1 class="my-2 text-center">This is our range of ice cream</h1>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-2">
         <div class="col">
             <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?girls " style=height:250px; class="d-block w-100" alt="...">
+                <img src="https://source.unsplash.com/1600x600/?girls" style="height: 250px;" class="d-block w-100" alt="Ice Cream">
                 <div class="card-body">
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#buyNowModal" data-item="Delicious Chocolate" data-price="4.99">Buy Now</button>
                         </div>
                         <small class="text-muted">9 mins</small>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?girl " style=height:250px; class="d-block w-100" alt="...">
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <!--button type="button" class="btn btn-sm btn-outline-secondary">Edit</!--button-->
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?cold " style=height:250px; class="d-block w-100" alt="...">
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Add more ice cream items as needed -->
+    </div>
+</div>
 
-        <div class="container-fluid">
-            <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?ice " style=height:250px; class="d-block w-100" alt="...">
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
+<!-- Buy Now Modal -->
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyNowModalLabel">Buy Now</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?icecream " style=height:250px; class="d-block w-100" alt="...">
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
+            <div class="modal-body">
+                <h4 class="modal-title" id="itemTitle"></h4>
+                <img src="" id="itemImage" style="height: 150px;" class="d-block mx-auto my-3" alt="Ice Cream">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="quantityInput" class="form-label">Quantity:</label>
+                        <input type="number" class="form-control" id="quantityInput" value="1" min="1">
                     </div>
-                </div>
+                    <p>Total Price: $<span id="totalPrice">0.00</span></p>
+                </form>
             </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="card shadow-sm">
-                <img src="https://source.unsplash.com/1600x600/?icecream " style=height:250px; class="d-block w-100" alt="...">
-                <div class="card-body">
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
             </div>
         </div>
     </div>
 </div>
+
+<div class="container my-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-2">
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="https://source.unsplash.com/1600x600/?girls" style="height: 250px;" class="d-block w-100" alt="Ice Cream">
+                <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#buyNowModal" data-item="Delicious Chocolate" data-price="4.99">Buy Now</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more ice cream items as needed -->
+    </div>
+</div>
+
+<!-- Buy Now Modal -->
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="buyNowModalLabel">Buy Now</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="modal-title" id="itemTitle"></h4>
+                <img src="" id="itemImage" style="height: 150px;" class="d-block mx-auto my-3" alt="Ice Cream">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="quantityInput" class="form-label">Quantity:</label>
+                        <input type="number" class="form-control" id="quantityInput" value="1" min="1">
+                    </div>
+                    <p>Total Price: $<span id="totalPrice">0.00</span></p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addToCart()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addToCart() {
+        // Get item details from the modal
+        const itemName = document.getElementById('itemTitle').innerText;
+        const itemPrice = parseFloat(document.getElementById('itemPrice').innerText);
+        const quantity = parseInt(document.getElementById('quantityInput').value);
+
+        // Calculate total price
+        const totalPrice = itemPrice * quantity;
+        document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+
+        // Add logic here to update the cart or perform any other action
+
+        // Close the modal after adding to cart
+        $('#buyNowModal').modal('hide');
+    }
+
+    // Listen for the modal show event and update modal content dynamically
+    $('#buyNowModal').on('show.bs.modal', function (event) {
+        const button = $(event.relatedTarget); // Button that triggered the modal
+        const itemName = button.data('item'); // Extract item name from data-* attributes
+        const itemPrice = button.data('price'); // Extract item price from data-* attributes
+        const itemImage = button.closest('.card').find('img').attr('src'); // Extract item image from the closest card
+
+        // Update modal content with the item details
+        document.getElementById('itemTitle').innerText = itemName;
+        document.getElementById('itemPrice').innerText = itemPrice.toFixed(2);
+        document.getElementById('quantityInput').value = 1;
+        document.getElementById('totalPrice').innerText = itemPrice.toFixed(2);
+        document.getElementById('itemImage').src = itemImage;
+    });
+</script>
 
 
 

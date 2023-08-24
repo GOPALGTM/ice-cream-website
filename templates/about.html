@@ -42,3 +42,72 @@
     </div>
 </section>
 {% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Website</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Add some custom styles for animation */
+        .animated-fadeInUp {
+            animation: fadeInUp 1s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <!-- carousel content goes here -->
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <h1 class="my-2 text-center">This is our range of ice cream</h1>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 my-2">
+            {% for ice_cream in ice_creams %}
+            <div class="col">
+                <div class="card shadow-sm animated-fadeInUp">
+                    <img src="https://source.unsplash.com/1600x600/?{{ ice_cream }}" style="height: 250px;" class="d-block w-100" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

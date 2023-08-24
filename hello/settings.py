@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-cc9%npk#2aimfj3j607_oo3d^-=itlx#t)febci+h8_ighn2t)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS  = ["http://65.2.149.220"]
+# CSRF_TRUSTED_ORIGINS  = ["http://65.2.149.220"]
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,18 @@ STATICFILES_DIRS = [
 ]
 
 APPEND_SLASH=False
+
+
+ANYMAIL = {
+    "SENDINBLUE_API_KEY": "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",
+}
+EMAIL_BACKEND = 'anymail.backends.sendinblue.EmailBackend'
+
+SERVER_EMAIL = 'gopalgautam279@gmail.com'
+DEFAULT_FROM_EMAIL = 'gopalgautam279@gmail.com'
+ADMINS = [('Your Name', 'gopalgautam279@gmail.com'),]
+
+AUTHENTICATION_BACKENDS = [
+    'myapp.backends.EmailBackend',  # Replace 'myapp' with the name of your app containing the custom backend
+    'django.contrib.auth.backends.ModelBackend',
+]
