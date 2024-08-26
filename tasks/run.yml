@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: docker
+    tag: "20.10.8"
+
+inputs:
+  - name: repo-2
+
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      echo "docker build repo2"
+      docker build -t repo-2-app .
