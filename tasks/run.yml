@@ -8,7 +8,7 @@ image_resource:
     tag: "20.10.8"
 
 inputs:
-  - name: repo-2
+  - name: ice-cream-repo
 
 run:
   path: sh
