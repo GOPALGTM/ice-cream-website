@@ -15,5 +15,5 @@ run:
   args:
     - -exc
     - |
-      echo "docker build repo2"
+      echo "docker build repo2 updated"
       docker build -t repo-2-app .
